@@ -1,0 +1,7 @@
+
+- if respond_to? :sections
+  - sections.each do |title, parts|
+    %section
+      %h2= I18n.t title, scope: 'roles'
+      - parts.each do |part|
+        %div{ class: part }= partial "plugins/#{part}"

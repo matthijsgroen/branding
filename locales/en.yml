@@ -1,0 +1,5 @@
+en:
+  hello: "I'm %{name} and..."
+  links: "Links"
+  roles:
+    developer: "I'm a Developer"
