@@ -1,0 +1,11 @@
+session:
+  name: 'Branding'
+  windows:
+    - root: <%= ENV['BRANDING_ROOT'] %>
+      name: 'Editing'
+      splits:
+        - cmd: 'vim'
+    - root: <%= ENV['BRANDING_ROOT'] %>
+      name: 'Daemons'
+      splits:
+        - cmd: 'middleman'
