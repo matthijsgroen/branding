@@ -3,9 +3,11 @@ require 'branding'
 ###
 # Branding Modules
 ###
+activate :sprockets
 activate :i18n
 activate :branding_links
 activate :branding_sections
+activate :branding_tokens
 
 ###
 # Plugins

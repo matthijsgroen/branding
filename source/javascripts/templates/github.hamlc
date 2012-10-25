@@ -1,0 +1,22 @@
+%h3 Github
+%p
+  = @repositories.length
+  repositories open-sourced
+
+%ul
+  - for tech, count of @languages
+    %li
+      = count
+      times
+      = tech
+
+%ul
+  - for repoInfo in @repositories
+    %li
+      %h4
+        = repoInfo.name
+        *
+        = repoInfo.stars
+        = if repoInfo.fork then "[FORK]" else "[SOURCE]"
+      %p= repoInfo.description
+

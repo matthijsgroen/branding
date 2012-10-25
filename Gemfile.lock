@@ -13,11 +13,16 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
+    ejs (1.1.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffi (1.1.5)
     fssm (0.2.9)
     haml (3.1.7)
+    haml_coffee_assets (1.6.0)
+      coffee-script (>= 1.0.0)
+      sprockets (>= 2.0.3)
+      tilt (>= 1.3.3)
     hike (1.2.1)
     http_router (0.10.2)
       rack (>= 1.0.0)
@@ -100,5 +105,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coffee-script
+  ejs
   haml
+  haml_coffee_assets
   middleman (~> 3.0.6)

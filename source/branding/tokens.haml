@@ -1,0 +1,3 @@
+- if respond_to? :tokens
+  - tokens.each do |token_hash|
+    %meta{ name: token_hash[:plugin], content: token_hash[:token] }
