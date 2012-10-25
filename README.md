@@ -50,6 +50,16 @@ Posterous
 Twitter
 
 - Show tweets
+- Show amount following and followers
+
+Steam
+
+- Show games
+- Show trophies
+
+Playstation
+
+- Show Trophies
 
 I just started this project, so nothing is working yet.
 
