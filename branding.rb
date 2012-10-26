@@ -1,6 +1,4 @@
-require 'branding/links'
-require 'branding/sections'
-require 'branding/tokens'
+require 'branding/extension'
 
 require 'plugins/linked_in'
 require 'plugins/github'

@@ -1,0 +1,27 @@
+menu {
+  list-style: none;
+  background: #fff;
+  border: 1px solid #333;
+  margin: 0.5em;
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: rgba(0,0,0,0.3) 0 2px 6px;
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    a {
+      display: block;
+      line-height: 2em;
+      font-size: 1em;
+      color: #333;
+      text-align: center;
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+    }
+    &:last-child a {
+      border-bottom: none;
+    }
+  }
+}

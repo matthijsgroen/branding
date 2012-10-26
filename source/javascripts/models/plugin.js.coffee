@@ -1,4 +1,4 @@
-class Branding.Plugin
+class Branding.Models.Plugin extends Backbone.Model
   testmode: no
 
   fetchData: (url, cacheKey) ->
@@ -32,4 +32,6 @@ class Branding.Plugin
 
   processData: (data, key) ->
     data
+
+class Branding.Collections.Plugins extends Backbone.Collection
 

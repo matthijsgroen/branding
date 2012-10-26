@@ -5,9 +5,7 @@ require 'branding'
 ###
 activate :sprockets
 activate :i18n
-activate :branding_links
-activate :branding_sections
-activate :branding_tokens
+activate :personal_branding
 
 ###
 # Plugins
@@ -60,12 +58,10 @@ activate :coderwall
 
 # Methods defined in the helpers block are available in templates
 helpers do
-
   def gravatar_url(email)
     digest = Digest::MD5.hexdigest email
-    "http://www.gravatar.com/avatar/#{digest}"
+    "http://www.gravatar.com/avatar/#{digest}?s=50"
   end
-
 end
 
 set :css_dir, 'stylesheets'

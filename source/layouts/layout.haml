@@ -18,12 +18,69 @@
       %img.gravatar{ src: gravatar_url(data.me.profile.email) }
       %h1= I18n.t 'hello', name: %(<span class="name">#{data.me.profile.name}</span>)
 
-    = yield
+    .main
+      %section.developer
+        %h2 I'm a Developer
+        %menu
+          %li
+            %a{ href: '#' } Github (5) &gt;
+          %li
+            %a{ href: '#' } Languages (4) &gt;
+          %li
+            %a{ href: '#' } Coderwall (34) &gt;
+          %li
+            %a{ href: '#' } Node.js (3) &gt;
 
-    %footer
-      - if respond_to? :links and !links.empty?
-        %h3= I18n.t 'links'
-        %ul.links(role="links")
-          - links.each do |link|
-            %li
-              %a{ href: link[:target] }= link[:label]
+      %section.artist
+        %h2 I'm an Artist
+        %menu
+          %li
+            %a{ href: '#' } DeviantArt (3) &gt;
+
+      %section.photographs
+        %h2 I'm a Photographer
+        %menu
+          %li
+            %a{ href: '#' } Instagram &gt;
+          %li
+            %a{ href: '#' } Flickr &gt;
+          %li
+            %a{ href: '#' } Picasa &gt;
+
+      %section.gamer
+        %h2 I'm a Gamer
+        %menu
+          %li
+            %a{ href: '#' } Steam (43) &gt;
+          %li
+            %a{ href: '#' } Platstation (12) &gt;
+
+      %section.blogger
+        %h2 I'm a Blogger
+        %menu
+          %li
+            %a{ href: '#' } Twitter
+          %li
+            %a{ href: '#' } Posterous
+
+      %section.profiles
+        %h2 Profiles
+        %menu
+          %li
+            %a{ href: '#' } Facebook
+          %li
+            %a{ href: '#' } LinkedIn
+
+      %section.contact
+        %h2 Contact
+        %menu
+          %li
+            %a{ href: '#' } matthijs.groen@gmail.com
+          %li
+            %a{ href: '#' } +31 6 28 61 06 28
+          %li
+            %a{ href: '#' } @matthijsgroen
+
+      %footer
+        %button Download vCard
+

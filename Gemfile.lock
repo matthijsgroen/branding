@@ -105,7 +105,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-script
   ejs
   haml
   haml_coffee_assets

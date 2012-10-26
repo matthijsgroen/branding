@@ -1,0 +1,14 @@
+@import 'compass/utilities/general/clearfix';
+
+header {
+  padding: 0.5em;
+  @include clearfix;
+
+  .gravatar {
+    float: left;
+    margin-right: 0.5em;
+  }
+  .name {
+    font-weight: bold;
+  }
+}

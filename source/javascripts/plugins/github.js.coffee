@@ -1,24 +1,17 @@
-#= require ./plugin
+class Branding.Plugins.Github extends Branding.Models.Plugin
 
-class Branding.Plugins.Github extends Branding.Plugin
-  template: JST['github']
+  initialize: ->
+    @fetchData "https://api.github.com/users/#{@get 'user'}/repos", 'github-repos'
 
-  constructor: (user, @$el) ->
-    @fetchData "https://api.github.com/users/#{user}/repos", 'github-repos'
+  dataLoaded: (data) ->
+    # trigger a ready event
 
   processData: (repositories, key) ->
     repos = @simplifyRepos repositories.data
     sortedRepos = _.sortBy repos, (repo) -> -Date.parse(repo.pushedAt)
-
     data =
       repositories: sortedRepos
       languages: @extractTechnologies repositories.data
-
-  dataLoaded: (data) ->
-    @render data
-
-  render: (data) ->
-    @$el.html @template data
 
   extractTechnologies: (repos) ->
     result = {}
@@ -37,6 +30,8 @@ class Branding.Plugins.Github extends Branding.Plugin
         pushedAt: repo.pushed_at
       }
 
-$ ->
+Branding.app.on 'application:initialize', (world) ->
   user = $('meta[name=github-user]').attr('content')
-  new Branding.Plugins.Github(user, $('div.github')) if user?
+  if user?
+    world.plugins.add new Branding.Plugins.Github(user: user)
+
