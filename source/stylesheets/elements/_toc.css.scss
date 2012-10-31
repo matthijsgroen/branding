@@ -1,0 +1,12 @@
+@import 'mixins/responsive';
+
+// Table of Contents
+
+.toc {
+  @include smallest-width {
+    display: none;
+  }
+}
+
+
+

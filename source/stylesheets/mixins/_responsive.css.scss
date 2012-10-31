@@ -1,0 +1,12 @@
+
+@mixin smallest-width {
+  @media (min-width: 0px) and (max-width: 319px) {
+    @content
+  }
+}
+
+@mixin mobile-width {
+  @media (min-width: 320px) {
+    @content
+  }
+}

@@ -1,0 +1,7 @@
+@import 'mixins/responsive';
+
+section.user-role {
+  @include mobile-width {
+    display: none;
+  }
+}

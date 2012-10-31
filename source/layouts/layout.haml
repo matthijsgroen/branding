@@ -18,45 +18,69 @@
       %img.gravatar{ src: gravatar_url(data.me.profile.email) }
       %h1= I18n.t 'hello', name: %(<span class="name">#{data.me.profile.name}</span>)
 
+    .toc
+      %h2 I'm a
+
+      %menu
+        %li
+          %a{ href: '#developer' } Developer
+        %li
+          %a{ href: '#artist' } Artist
+        %li
+          %a{ href: '#photographer' } Photographer
+        %li
+          %a{ href: '#gamer' } Gamer
+        %li
+          %a{ href: '#blogger' } Blogger
+
     .main
-      %section.developer
-        %h2 I'm a Developer
+
+      %section.user-role.developer
+        %h2
+          %a{ name: 'developer' }
+            I'm a Developer
         %menu
           %li
-            %a{ href: '#' } Github (5) &gt;
+            %a{ href: '#' } Github
           %li
-            %a{ href: '#' } Languages (4) &gt;
+            %a{ href: '#' } Coderwall
           %li
-            %a{ href: '#' } Coderwall (34) &gt;
-          %li
-            %a{ href: '#' } Node.js (3) &gt;
+            %a{ href: '#' } Node.js
 
-      %section.artist
-        %h2 I'm an Artist
+      %section.user-role.artist
+        %h2
+          %a{ name: 'artist'}
+            I'm an Artist
         %menu
           %li
-            %a{ href: '#' } DeviantArt (3) &gt;
+            %a{ href: '#' } DeviantArt
 
-      %section.photographs
-        %h2 I'm a Photographer
+      %section.user-role.photographs
+        %h2
+          %a{ name: 'photographer' }
+            I'm a Photographer
         %menu
           %li
-            %a{ href: '#' } Instagram &gt;
+            %a{ href: '#' } Instagram
           %li
-            %a{ href: '#' } Flickr &gt;
+            %a{ href: '#' } Flickr
           %li
-            %a{ href: '#' } Picasa &gt;
+            %a{ href: '#' } Picasa
 
-      %section.gamer
-        %h2 I'm a Gamer
+      %section.user-role.gamer
+        %h2
+          %a{ name: 'gamer' }
+            I'm a Gamer
         %menu
           %li
-            %a{ href: '#' } Steam (43) &gt;
+            %a{ href: '#' } Steam
           %li
-            %a{ href: '#' } Platstation (12) &gt;
+            %a{ href: '#' } Platstation
 
-      %section.blogger
-        %h2 I'm a Blogger
+      %section.user-role.blogger
+        %h2
+          %a{ name: 'blogger' }
+            I'm a Blogger
         %menu
           %li
             %a{ href: '#' } Twitter
@@ -82,5 +106,6 @@
             %a{ href: '#' } @matthijsgroen
 
       %footer
-        %button Download vCard
+        .vcard
+          %button Download vCard
 
