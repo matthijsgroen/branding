@@ -58,10 +58,30 @@ activate :coderwall
 
 # Methods defined in the helpers block are available in templates
 helpers do
+
   def gravatar_url(email)
     digest = Digest::MD5.hexdigest email
     "http://www.gravatar.com/avatar/#{digest}?s=50"
   end
+
+  def role_class(list, element)
+    amount = list.size
+    index = list.index element
+
+    return "large #{element}" if amount % 3 == 1 and index == 0
+    return "medium #{element}" if amount % 3 == 2 and index < 2
+    pattern = %w(medium small small)
+    pattern_index = (index - (amount % 3))
+    reverse = false
+    reverse = true if amount % 3 == 2
+    reverse = !reverse if (pattern_index / pattern.size).floor % 2 == 0
+
+    pattern_class = pattern[pattern_index % pattern.size]
+
+    pattern_class.concat(" reverse") if reverse
+    pattern_class.concat(" #{element}")
+  end
+
 end
 
 set :css_dir, 'stylesheets'

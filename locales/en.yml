@@ -1,5 +1,10 @@
 en:
   hello: "I'm %{name} and..."
+  role: "I'm a %{role}"
   links: "Links"
   roles:
-    developer: "I'm a Developer"
+    developer: "Developer"
+    artist: "Artist"
+    photographer: "Photographer"
+    gamer: "Gamer"
+    blogger: "Blogger"

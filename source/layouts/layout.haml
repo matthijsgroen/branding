@@ -19,19 +19,13 @@
       %h1= I18n.t 'hello', name: %(<span class="name">#{data.me.profile.name}</span>)
 
     .toc
-      %h2 I'm a
+      %h2= I18n.t 'role', role: ''
 
+      - roles = %w(developer artist photographer gamer blogger)
       %menu
-        %li
-          %a{ href: '#developer' } Developer
-        %li
-          %a{ href: '#artist' } Artist
-        %li
-          %a{ href: '#photographer' } Photographer
-        %li
-          %a{ href: '#gamer' } Gamer
-        %li
-          %a{ href: '#blogger' } Blogger
+        - roles.each_with_index do |role, index|
+          %li{ class: role_class(roles, role) }
+            %a{ href: "##{role}" }= I18n.t role, scope: 'roles'
 
     .main
 
