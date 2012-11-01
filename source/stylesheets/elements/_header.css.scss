@@ -1,17 +1,60 @@
+@import 'mixins/responsive';
 @import 'compass/utilities/general/clearfix';
 @import 'compass/css3/box-shadow';
 
 header {
+  position: relative;
   padding: 0.5em;
   @include clearfix;
+  -webkit-transition: background-color 500ms;
 
   .gravatar {
-    float: left;
+    -webkit-transition: padding 500ms, width 500ms, height 500ms;
+    padding: 0;
+    background: white;
+    width: 75px;
+    height: 75px;
     margin-right: 0.5em;
     @include box-shadow(rgba(0,0,0,0.5) 0 8px 6px -5px);
-
   }
-  .name {
-    font-weight: bold;
+  h1 {
+    -webkit-transition: color 500ms, font-size 500ms;;
+    color: #222;
+    .name {
+      font-weight: bold;
+      text-align: center;
+      text-indent: 0;
+      line-height: 1.2em;
+      color: #222;
+    }
+  }
+
+  @include smallest-width {
+    .gravatar {
+      float: left;
+      width: 50px;
+      height: 50px;
+    }
+  }
+  @include mobile-width {
+    box-shadow: rgba(0,0,0,0.3) 0 -2em 2em -2em inset;
+    height: 8.5em;
+    .gravatar {
+      padding: 2px;
+      background: white;
+      border: 1px solid #222;
+      position: absolute;
+      top: 3.3em;
+    }
+    h1 {
+      color: rgba(34,34,34,0);
+      font-size: 1.5em;
+      .name {
+        width: 100%;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+      }
+
+    }
+
   }
 }

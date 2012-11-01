@@ -5,6 +5,7 @@
 
     / Always force latest IE rendering engine or request Chrome Frame
     %meta(content="IE=edge,chrome=1" http-equiv="X-UA-Compatible")
+    %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
     = partial 'branding/tokens'
 
     / Use title if it's in the page YAML frontmatter
@@ -26,6 +27,10 @@
         - roles.each_with_index do |role, index|
           %li{ class: role_class(roles, role) }
             %a{ href: "##{role}" }= I18n.t role, scope: 'roles'
+        %li.links
+          %a{ href: '#profiles' } Profiles
+        %li.links
+          %a{ href: '#contact' } Contact
 
     .main
 
@@ -82,7 +87,9 @@
             %a{ href: '#' } Posterous
 
       %section.profiles
-        %h2 Profiles
+        %h2
+          %a{ name: 'profiles' }
+            Profiles
         %menu
           %li
             %a{ href: '#' } Facebook
@@ -90,7 +97,9 @@
             %a{ href: '#' } LinkedIn
 
       %section.contact
-        %h2 Contact
+        %h2
+          %a{ name: 'contact' }
+            Contact
         %menu
           %li
             %a{ href: '#' } matthijs.groen@gmail.com

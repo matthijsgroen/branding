@@ -61,7 +61,7 @@ helpers do
 
   def gravatar_url(email)
     digest = Digest::MD5.hexdigest email
-    "http://www.gravatar.com/avatar/#{digest}?s=50"
+    "http://www.gravatar.com/avatar/#{digest}?s=80"
   end
 
   def role_class(list, element)

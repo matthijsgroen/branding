@@ -9,6 +9,18 @@
     display: none;
   }
 
+  h2 {
+    margin-top: -2em;
+    padding-bottom: 0.8em;
+    position: relative;
+    font-size: 2.5em;
+    text-align: left;
+    text-indent: 50%;
+    padding-right: 0.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+  }
+
   menu {
     list-style: none;
     margin: 0;
@@ -21,19 +33,18 @@
   }
 
   li {
-    text-align: center;
+    text-align: left;
+    text-indent: 1em;
+    line-height: 4em;
 
     &.large, &.medium {
-      line-height: 4em;
       a {
+        padding-top: 4em;
         padding-bottom: 1px;
       }
     }
     &.medium, &.small {
       width: 50%;
-    }
-    &.small {
-      line-height: 2em;
     }
 
     &.medium, &.small {
@@ -49,10 +60,51 @@
       }
       display: block;
       text-decoration: none;
-      color: #333;
+      color: #fff;
+    }
+
+    &.links {
+      line-height: 3em;
+      clear: both;
+      a {
+        background-color: #E6F8C4;
+        color: #222;
+        text-align: center;
+        position: relative;
+
+        &::after {
+          content: '>';
+          position: absolute;
+          display: block;
+          padding-right: 10px;
+          color: #777;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+
+
+    // role styling
+    &.photographer a {
+      background: red;
+    }
+    &.developer a {
+      background: green;
+    }
+    &.artist a {
+      background: orange;
+    }
+    &.gamer a {
+      background: purple;
+    }
+    &.blogger a {
+      background: grey;
+    }
+    a:hover {
+      background: #ddd;
+      text-shadow: 2px 2px 3px #444;
     }
   }
 }
-
-
 
