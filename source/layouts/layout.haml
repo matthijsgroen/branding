@@ -18,11 +18,12 @@
     %header
       %img.gravatar{ src: gravatar_url(data.me.profile.email) }
       %h1= I18n.t 'hello', name: %(<span class="name">#{data.me.profile.name}</span>)
+      %p{ class: 'introduction' }= lorem.paragraph
 
     .toc
-      %h2= I18n.t 'role', role: ''
+      %h1= I18n.t 'role', role: ''
 
-      - roles = %w(developer artist photographer gamer blogger)
+      - roles = structure.keys
       %menu
         - roles.each_with_index do |role, index|
           %li{ class: role_class(roles, role) }
@@ -34,57 +35,26 @@
 
     .main
 
-      %section.user-role.developer
-        %h2
-          %a{ name: 'developer' }
-            I'm a Developer
-        %menu
-          %li
-            %a{ href: '#' } Github
-          %li
-            %a{ href: '#' } Coderwall
-          %li
-            %a{ href: '#' } Node.js
+      - structure.each do |key, providers|
+        %section.user-role{ class: key }
+          %h1
+            %a{ name: key } I'm a #{key}
 
-      %section.user-role.artist
-        %h2
-          %a{ name: 'artist'}
-            I'm an Artist
-        %menu
-          %li
-            %a{ href: '#' } DeviantArt
+          - providers.each do |name, data|
+            %section.info-provider{ class: name.downcase }
+              %h1
+                %a{ name: name.downcase, href: data[:url], target: '_blank' }= name
 
-      %section.user-role.photographs
-        %h2
-          %a{ name: 'photographer' }
-            I'm a Photographer
-        %menu
-          %li
-            %a{ href: '#' } Instagram
-          %li
-            %a{ href: '#' } Flickr
-          %li
-            %a{ href: '#' } Picasa
+              %p.introduction= lorem.paragraph
 
-      %section.user-role.gamer
-        %h2
-          %a{ name: 'gamer' }
-            I'm a Gamer
-        %menu
-          %li
-            %a{ href: '#' } Steam
-          %li
-            %a{ href: '#' } Platstation
+              %section.slide
+                %h1 activity
+                %p= lorem.paragraph
 
-      %section.user-role.blogger
-        %h2
-          %a{ name: 'blogger' }
-            I'm a Blogger
-        %menu
-          %li
-            %a{ href: '#' } Twitter
-          %li
-            %a{ href: '#' } Posterous
+              %section.slide
+                %h1 index
+                %p= lorem.paragraph
+
 
       %section.profiles
         %h2

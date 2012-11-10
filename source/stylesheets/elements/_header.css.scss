@@ -6,10 +6,8 @@ header {
   position: relative;
   padding: 0.5em;
   @include clearfix;
-  -webkit-transition: background-color 500ms;
 
   .gravatar {
-    -webkit-transition: padding 500ms, width 500ms, height 500ms;
     padding: 0;
     background: white;
     width: 75px;
@@ -18,7 +16,6 @@ header {
     @include box-shadow(rgba(0,0,0,0.5) 0 8px 6px -5px);
   }
   h1 {
-    -webkit-transition: color 500ms, font-size 500ms;;
     color: #222;
     .name {
       font-weight: bold;
@@ -27,6 +24,9 @@ header {
       line-height: 1.2em;
       color: #222;
     }
+  }
+  > p.introduction {
+    display: none;
   }
 
   @include smallest-width {
@@ -53,8 +53,6 @@ header {
         width: 100%;
         text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
       }
-
     }
-
   }
 }

@@ -1,12 +1,11 @@
 @import 'mixins/responsive';
 
-section.user-role, section.profiles, section.contact {
-  -webkit-transition: max-height 500ms;
-  @include smallest-width {
-    max-height: 10em;
+section.user-role {
+  > h1 {
+    text-align: center;
+    margin: 0.5em;
   }
-  @include mobile-width {
-    max-height: 0;
-    overflow: hidden;
+  > p.introduction {
+    display: none;
   }
 }

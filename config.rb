@@ -82,6 +82,49 @@ helpers do
     pattern_class.concat(" #{element}")
   end
 
+
+  def structure
+    {
+      developer: {
+        "Github" => {
+          url: "http://www.github.com/"
+        },
+        "Coderwall" => {
+          url: "http://www.coderwall.com/"
+        },
+        "Node.js" => {
+          url: "http://nodejs.com"
+        }
+      },
+      artist: {
+        "DeviantArt" => {
+          url: "http://deviantart.com"
+        }
+      },
+      photographer: {
+        "Flickr" => {
+          url: "http://flickr.com"
+        },
+        "Picasa" => {
+          url: "http://picasaweb.com"
+        }
+      },
+      gamer: {
+        "Steam" => {
+          url: "http://steampowered.com"
+        }
+      },
+      blogger: {
+        "Twitter" => {
+          url: "http://twitter.com"
+        },
+        "Blogger" => {
+          url: "http://blogger.com"
+        }
+      }
+    }
+  end
+
 end
 
 set :css_dir, 'stylesheets'
