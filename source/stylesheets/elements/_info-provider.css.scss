@@ -1,5 +1,6 @@
-section.info-provider {
+@import 'mixins/link_item';
 
+section.info-provider {
 
   margin: 0 1em;
   box-shadow: rgba(0,0,0,0.3) 2px 2px 3px;
@@ -24,19 +25,12 @@ section.info-provider {
   }
 
   > h1 a {
-    text-align: center;
-    padding: 0.3em;
-    display: block;
+    @include mobile-link-item;
     background: white;
-    color: black;
-    text-decoration: none;
     border: {
       top: 1px solid black;
       left: 1px solid black;
       right: 1px solid black;
-    }
-    &:hover {
-      text-shadow: rgba(0,0,0,0.4) 1px 1px 2px;
     }
   }
   > p.introduction {

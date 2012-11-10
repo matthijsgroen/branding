@@ -9,21 +9,21 @@
     = partial 'branding/tokens'
 
     / Use title if it's in the page YAML frontmatter
-    %title= data.me.profile.name
+    %title= data.me.contact.name
 
     = stylesheet_link_tag "normalize", "all"
     = javascript_include_tag  "all"
 
   %body
     %header
-      %img.gravatar{ src: gravatar_url(data.me.profile.email) }
-      %h1= I18n.t 'hello', name: %(<span class="name">#{data.me.profile.name}</span>)
+      %img.gravatar{ src: gravatar_url(data.me.contact.email) }
+      %h1= I18n.t 'hello', name: %(<span class="name">#{data.me.contact.name}</span>)
       %p{ class: 'introduction' }= lorem.paragraph
 
     .toc
       %h1= I18n.t 'role', role: ''
 
-      - roles = structure.keys
+      - roles = role_structure.keys
       %menu
         - roles.each_with_index do |role, index|
           %li{ class: role_class(roles, role) }
@@ -35,7 +35,7 @@
 
     .main
 
-      - structure.each do |key, providers|
+      - role_structure.each do |key, providers|
         %section.user-role{ class: key }
           %h1
             %a{ name: key } I'm a #{key}
@@ -57,26 +57,23 @@
 
 
       %section.profiles
-        %h2
+        %h1
           %a{ name: 'profiles' }
             Profiles
         %menu
-          %li
-            %a{ href: '#' } Facebook
-          %li
-            %a{ href: '#' } LinkedIn
+          - profiles.each do |p|
+            %li
+              %a{ href: p[:target] }= p[:label]
 
       %section.contact
-        %h2
+        %h1
           %a{ name: 'contact' }
             Contact
         %menu
           %li
-            %a{ href: '#' } matthijs.groen@gmail.com
+            %a{ href: "mailto:#{data.me.contact.email}" }= data.me.contact.email
           %li
-            %a{ href: '#' } +31 6 28 61 06 28
-          %li
-            %a{ href: '#' } @matthijsgroen
+            %a{ href: '#' }= data.me.contact.phone
 
       %footer
         .vcard

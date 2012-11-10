@@ -10,21 +10,21 @@ module Branding
 
     module Helpers
 
-      def links
-        @links ||= []
+      def profiles
+        @profiles ||= []
       end
 
-      def add_link role, target, label
-        links << { role: role, target: target, label: label }
+      def add_profile role, target, label
+        profiles << { role: role, target: target, label: label }
       end
 
-      def sections
+      def role_structure
         @sections ||= {}
       end
 
-      def add_section title, partial
-        sections[title] ||= []
-        sections[title] << partial
+      def add_section title, provider_id, settings
+        role_structure[title] ||= {}
+        role_structure[title][provider_id] = settings
       end
 
       def tokens

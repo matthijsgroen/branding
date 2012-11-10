@@ -1,0 +1,31 @@
+@import 'mixins/link_item';
+
+section.profiles, section.contact {
+  > h1 {
+    text-align: center;
+    margin: 0.5em;
+  }
+
+  menu {
+    margin: 0 1em;
+    box-shadow: rgba(0,0,0,0.3) 2px 2px 3px;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    list-style: none;
+    background: white;
+    padding: 0;
+
+    li {
+      margin: 0;
+      padding: 0;
+      a {
+        border-bottom: 1px solid black;
+        @include mobile-link-item;
+      }
+
+      &:last-of-type a {
+        border-bottom: none;
+      }
+    }
+  }
+}
