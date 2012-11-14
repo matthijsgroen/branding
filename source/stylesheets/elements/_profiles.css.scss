@@ -2,12 +2,13 @@
 
 section.profiles, section.contact {
   > h1 {
+    font-size: 1em;
     text-align: center;
-    margin: 0.5em;
+    line-height: 2em;
   }
 
   menu {
-    margin: 0 1em;
+    margin: -1px 1em 0 1em;
     box-shadow: rgba(0,0,0,0.3) 2px 2px 3px;
     border: 1px solid black;
     border-radius: 0.5em;
@@ -19,7 +20,10 @@ section.profiles, section.contact {
       margin: 0;
       padding: 0;
       a {
+        line-height: (1.5 * 16px) - 1px;
         border-bottom: 1px solid black;
+        overflow: hidden;
+        text-overflow: ellipsis;
         @include mobile-link-item;
       }
 
