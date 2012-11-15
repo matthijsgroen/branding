@@ -3,16 +3,8 @@ require 'branding'
 ###
 # Branding Modules
 ###
-activate :sprockets
 activate :i18n
 activate :personal_branding
-
-###
-# Plugins
-###
-activate :linked_in
-activate :github
-activate :coderwall
 
 ###
 # Compass

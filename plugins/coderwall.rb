@@ -1,16 +1,12 @@
 
-module Coderwall
-  class << self
-    def registered app
-      app.after_configuration do
-        if respond_to? :add_section
-          add_section :developer,
-            'Coderwall',
-            url: "https://coderwall.com/#{data.me.coderwall}"
-        end
-      end
-    end
+class CoderwallPlugin
+  def build_sections(builder, data)
+    return unless data.coderwall
+    builder.add_section :developer,
+      'Coderwall',
+      url: "https://coderwall.com/#{data.coderwall}"
   end
 end
 
-Middleman::Extensions.register :coderwall, Coderwall
+Branding::Plugins.add CoderwallPlugin.new
+

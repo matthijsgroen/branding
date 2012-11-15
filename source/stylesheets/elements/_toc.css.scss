@@ -10,24 +10,23 @@
   }
 
   h1 {
-    margin-top: -2em;
-    padding-bottom: 0.8em;
+    margin-top: -3em;
     position: relative;
-    font-size: 2.5em;
+    font-size: 2em;
     text-align: left;
     text-indent: 50%;
-    padding-right: 0.5em;
     font-weight: bold;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    line-height: 3em;
   }
 
   menu {
     list-style: none;
-    margin: 0;
+    margin: -1px 0 0 0;
     padding: 0;
     border: {
-      top: 1px solid #000;
-      left: 1px solid #000;
+      top: 0.12em solid #000;
+      left: 0.12em solid #000;
     }
     @include clearfix;
   }
@@ -35,7 +34,7 @@
   li {
     text-align: left;
     text-indent: 1em;
-    line-height: 4em;
+    line-height: 3.9em;
 
     &.large, &.medium {
       a {
@@ -45,6 +44,9 @@
     }
     &.medium, &.small {
       width: 50%;
+    }
+    &.small {
+      line-height: 3.99em;
     }
 
     &.medium, &.small {
@@ -64,7 +66,7 @@
     }
 
     &.links {
-      line-height: 3em;
+      line-height: 3.99em;
       clear: both;
       a {
         background-color: #E6F8C4;

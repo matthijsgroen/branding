@@ -1,12 +1,10 @@
 
-module LinkedIn
-  class << self
-    def registered app
-      app.after_configuration do
-        add_profile 'linked_in', data.me.linked_in, 'LinkedIn' if respond_to? :add_profile
-      end
-    end
+class LinkedInPlugin
+
+  def build_profiles(builder, data)
+    return unless data.linked_in
+    builder.add_profile 'linked_in', data.linked_in, 'LinkedIn'
   end
 end
 
-Middleman::Extensions.register :linked_in, LinkedIn
+Branding::Plugins.add LinkedInPlugin.new
