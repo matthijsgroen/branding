@@ -72,7 +72,7 @@
           %li
             %a{ href: "mailto:#{data.me.contact.email}" }= data.me.contact.email
           %li
-            %a{ href: '#' }= data.me.contact.phone
+            %a{ href: "tel:#{data.me.contact.phone}" }= data.me.contact.phone
 
       %footer
         -#.vcard
