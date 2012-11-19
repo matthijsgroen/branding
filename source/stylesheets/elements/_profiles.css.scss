@@ -2,34 +2,18 @@
 
 section.profiles, section.contact {
   > h1 {
-    font-size: 1em;
     text-align: center;
-    line-height: 2em;
+    @include adjust-font-size-to(ms(0));
+    @include leader;
   }
 
   menu {
-    margin: -1px 1em 0 1em;
-    box-shadow: rgba(0,0,0,0.3) 2px 2px 3px;
-    border: 1px solid black;
-    border-radius: 0.5em;
-    list-style: none;
-    background: white;
+    margin: 0;
     padding: 0;
+    list-style: none;
 
     li {
-      margin: 0;
-      padding: 0;
-      a {
-        line-height: (1.5 * 16px) - 1px;
-        border-bottom: 1px solid black;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        @include mobile-link-item;
-      }
-
-      &:last-of-type a {
-        border-bottom: none;
-      }
+      @include mobile-link-item;
     }
   }
 }

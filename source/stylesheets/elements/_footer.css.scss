@@ -1,9 +1,9 @@
 
 footer {
-  margin-top: 1em;
+  @include leader;
   p.credits {
+    @include adjust-font-size-to(ms(-3));
     margin: 0;
-    font-size: 0.8em;
     text-align: center;
     color: #888;
   }

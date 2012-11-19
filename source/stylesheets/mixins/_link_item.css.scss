@@ -1,11 +1,42 @@
+@import 'compass/css3/border-radius';
+
 @mixin mobile-link-item {
-  text-align: center;
-  padding: 0.25em;
-  display: block;
-  color: black;
-  text-decoration: none;
-  &:hover {
-    text-shadow: rgba(0,0,0,0.4) 1px 1px 2px;
+  margin: 0 1em;
+  box-shadow: rgba(0,0,0,0.3) 2px 2px 3px;
+  @include adjust-font-size-to(ms(0));
+
+  &:first-of-type {
+    @include border-top-radius(0.5em);
+    a {
+      @include border-top-radius(0.5em);
+    }
+  }
+
+  &:last-child {
+    @include border-bottom-radius(0.5em);
+    a {
+      @include border-bottom-radius(0.5em);
+      @include trailing-border(1px, 0.5);
+    }
+  }
+
+  a {
+    display: block;
+    @include padding-trailer(0.5);
+    overflow: hidden;
+    color: black;
+    background: white;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    @include leading-border(1px, 0.5);
+    border: {
+      left: 1px solid black;
+      right: 1px solid black;
+    }
+    &:hover {
+      text-shadow: rgba(0,0,0,0.4) 1px 1px 2px;
+    }
   }
 }
 

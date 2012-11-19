@@ -1,39 +1,10 @@
 @import 'mixins/link_item';
 
 section.info-provider {
+  @include mobile-link-item;
 
-  margin: -1px 1em 0 1em;
-  box-shadow: rgba(0,0,0,0.3) 2px 2px 3px;
-
-  &:first-of-type {
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    a {
-      border-top-left-radius: 0.5em;
-      border-top-right-radius: 0.5em;
-    }
-  }
-
-  &:last-child {
-    border-bottom-left-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-    a {
-      line-height: (1.5 * 16px) - 1px;
-      border-bottom: 1px solid black;
-      border-bottom-left-radius: 0.5em;
-      border-bottom-right-radius: 0.5em;
-    }
-  }
-
-  > h1 a {
-    @include mobile-link-item;
-    line-height: 1.5em;
-    background: white;
-    border: {
-      top: 1px solid black;
-      left: 1px solid black;
-      right: 1px solid black;
-    }
+  > h1  {
+    @include adjust-font-size-to(ms(0));
   }
   > p.introduction {
     display: none;

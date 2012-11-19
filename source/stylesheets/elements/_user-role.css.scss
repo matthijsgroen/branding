@@ -2,10 +2,10 @@
 
 section.user-role {
   > h1 {
-    font-size: 1em;
     text-align: center;
-    line-height: 2em;
     margin: 0;
+    @include adjust-font-size-to(ms(0));
+    @include leader;
   }
   > p.introduction {
     display: none;
