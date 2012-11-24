@@ -1,14 +1,15 @@
 @import 'mixins/link_item';
 
-section.info-provider {
-  @include mobile-link-item;
+@include smallest-width {
+  section.info-provider {
+    @include mobile-link-item;
 
-  > h1  {
-    @include adjust-font-size-to(ms(0));
-  }
-  > p.introduction {
-    display: none;
-  }
+    > h1  {
+      @include adjust-font-size-to(ms(0));
+    }
+    > p.introduction {
+      display: none;
+    }
 
+  }
 }
-

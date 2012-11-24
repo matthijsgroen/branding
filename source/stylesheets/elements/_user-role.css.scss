@@ -1,13 +1,26 @@
 @import 'mixins/responsive';
 
 section.user-role {
-  > h1 {
-    text-align: center;
-    margin: 0;
-    @include adjust-font-size-to(ms(0));
-    @include leader;
+  @include smallest-width {
+    > h1 {
+      text-align: center;
+      margin: 0;
+      @include adjust-font-size-to(ms(0));
+      @include leader;
+    }
+    > p.introduction {
+      display: none;
+    }
   }
-  > p.introduction {
-    display: none;
+  @include mobile-width {
+    @include adjust-font-size-to(ms(1), 1);
+    > h1 {
+      @include adjust-font-size-to(ms(1), 2, ms(1));
+      @include padding-leader(1, ms(1));
+      text-indent: 1em;
+      color: white;
+    }
+    @include padding-trailer(1, ms(1));
   }
+
 }

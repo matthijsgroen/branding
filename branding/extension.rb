@@ -37,6 +37,11 @@ module Branding
       ::Branding::Plugins.each do |p|
         p.build_sections self, data if p.respond_to? :build_sections
       end
+      @structure["photographer"] = {
+        "hello" => {
+          url: "stuff"
+        }
+      }
     end
 
     def add_section title, provider_id, settings

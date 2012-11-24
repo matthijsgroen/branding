@@ -1,7 +1,12 @@
 @import 'compass/typography/vertical_rhythm';
 @import 'modular-scale';
 
-$ratio: minor-second();
+$ratio: fourth(); //minor-second();
 $base-font-size: 16px;
 $base-line-height: 24px;
 
+$photographer: #800000;
+$developer: #008000;
+$artist: #ffa500;
+$gamer: #800080;
+$blogger: #a9a9a9;

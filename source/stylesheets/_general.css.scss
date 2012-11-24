@@ -1,5 +1,25 @@
+@import 'mixins/responsive';
+@import 'variables';
+
 body {
   margin: 0;
   padding: 0;
   background-color: #e0f9e3;
+}
+@include mobile-width {
+  .photographer {
+    background: $photographer;
+  }
+  .developer {
+    background: $developer;
+  }
+  .artist {
+    background: $artist;
+  }
+  .gamer {
+    background: $gamer;
+  }
+  .blogger {
+    background: $blogger;
+  }
 }

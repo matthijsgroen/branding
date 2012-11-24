@@ -12,8 +12,8 @@ header {
     padding: 0;
     background: white;
     // How to do using vertical rhythm?
-    width: 4.5em;
-    height: 4.5em;
+    width: rhythm(3);
+    height: rhythm(3);
     margin-right: 0.5em;
     @include box-shadow(rgba(0,0,0,0.5) 0 8px 6px -5px);
   }
@@ -34,28 +34,27 @@ header {
 
   @include smallest-width {
     // How to calculate using vertical-rhythm?
-    min-height: 3em;
+    min-height: rhythm(2);
     .gravatar {
       float: left;
-      width: 3em;
-      height: 3em;
+      width: rhythm(2);
+      height: rhythm(2);
     }
   }
   @include mobile-width {
-    box-shadow: rgba(0,0,0,0.3) 0 -2em 2em -2em inset;
-    height: 10em;
+    box-shadow: rgba(0,0,0,0.4) 0 -2em 2em -2em inset;
+    height: rhythm(7);
     .gravatar {
-      padding: 0.2em;
+      padding: rhythm(0.125);
       background: white;
-      border: 1px solid #222;
+      border: rhythm(0.075) solid #222;
       position: absolute;
-      top: 5em;
+      top: rhythm(3 - 0.125 - 0.075);
     }
-    h1 {
+    > h1 {
       color: rgba(34,34,34,0);
-      line-height: 1em;
-      font-size: 2em;
       .name {
+        @include adjust-font-size-to(ms(2));
         text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
         display: block;
       }
